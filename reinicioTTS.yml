@@ -1,6 +1,17 @@
 - name: Hello World Sample
   hosts: all
   tasks:
-    - name: Hello Message
-      debug:
-        msg: "Hello World!"
+    - name: Stop a service
+      win_service:
+        name: spooler
+        state: stopped
+
+    - name: Start a service
+      win_service:
+        name: spooler
+        state: started
+      ignore_errors: yes
+      register: result
+
+    - debug:
+        var: result

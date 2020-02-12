@@ -1,4 +1,4 @@
-- name: Hello World Sample
+- name: Playbook para reiniciar TTs
   hosts: all
   tasks:
     - name: Stop a service
